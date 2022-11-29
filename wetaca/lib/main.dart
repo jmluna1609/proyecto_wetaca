@@ -12,10 +12,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'proyecto wetaca',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('BIENVENIDO'),
+        ),
+        body: Align(
+          alignment: Alignment(0.00, -0.80),
+          child: Image.network(
+            "https://images.prismic.io/rakuten-europe/d7b25e51-f442-4e38-bc28-44e89576bffb_wetaca.png?auto=compress,format",
+            height: 100,
+            width: 200,
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'BIENVENIDO A WETACA'),
     );
   }
 }
