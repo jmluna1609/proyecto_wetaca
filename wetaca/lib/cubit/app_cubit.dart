@@ -3,7 +3,7 @@ import 'package:wetaca/service/login_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 //clase para conocer el estado de la aplicacion
-class Appstate {
+class AppState {
   final bool isUserLoggedIn; //variable para saber si el usuario esta logueado
   final bool isLoading; //variable para saber si la aplicación esta cargando
   final LoginResponseDto?
