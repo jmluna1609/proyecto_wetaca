@@ -1,28 +1,16 @@
-//aqui vamos a registrar el acceso del usuario
-class LoginResponseDto {
-  final String token;
-  final String refreshToken;
-  final String message;
-  final String error;
+// Un DTO significa Data Transfer Object
+// Tambien puede ser llamado VO que significa Value Object
+// En este caso, es un DTO porque es un objeto que se usa para transferir datos
+// En java puede llamarse POJO (Plain Old Java Object)
+// NO TIENEN LOGICA DE NEGOCIO
 
-//esto es para que el usuario pueda acceder a la aplicacion
-//si el usuario no esta registrado no podra acceder
-//si el usuario esta registrado podra acceder
-//si el usuario esta registrado pero no tiene permisos no podra acceder
-// si el usuario esta registrado y tiene permisos podra acceder
-  LoginResponseDto({
-    required this.token,
-    required this.refreshToken,
-    required this.message,
-    required this.error,
-  });
+class LoginResponseDto {
+  final String? token;
+  final String? refresh;
+
+  LoginResponseDto({this.token, this.refresh});
 
   factory LoginResponseDto.fromJson(Map<String, dynamic> json) {
-    return LoginResponseDto(
-      token: json['token'],
-      refreshToken: json['refreshToken'],
-      message: json['message'],
-      error: json['error'],
-    );
+    return LoginResponseDto(token: json['token'], refresh: json['refresh']);
   }
 }
