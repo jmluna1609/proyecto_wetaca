@@ -21,15 +21,14 @@ class _LoginPageState extends State<LoginPage> {
       create: (context) => LoginCubit(),
       child: Scaffold(
           appBar: AppBar(
-            title: const Text("Login"),
+            title: const Text("BIENVENIDO"),
           ),
           body: BlocConsumer<LoginCubit, LoginState>(
-            // Escucho los eventos que llengan del Cubit
+            // Escucho los eventos que llegan del Cubit
             listener: (ctx3, state) {
               // Si el cubit dice cargando, se muestra un Dialog
               if (state.status == PageStatus.loading) {
-                _showDialog(context, "Autenticación",
-                    "Verificando sus credenciales", false);
+                _showDialog(context, "Autenticación", "Verificando...", false);
               } else if (state.status == PageStatus.success &&
                   state.loginSuccess) {
                 // Si el cubit dice que la autenticación fue correcta,
@@ -53,18 +52,27 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Login"),
+        Align(
+          alignment: const Alignment(0.00, -0.60),
+          child: Image.network(
+            "https://images.prismic.io/rakuten-europe/d7b25e51-f442-4e38-bc28-44e89576bffb_wetaca.png?auto=compress,format",
+            height: 100,
+            width: 200,
+            fit: BoxFit.cover,
+          ),
+        ),
         TextField(
           controller: _usernameController,
           decoration: const InputDecoration(
-            hintText: "Username",
+            hintText: "Usuario:",
           ),
         ),
         TextField(
           controller: _passwordController,
           decoration: const InputDecoration(
-            hintText: "Password",
+            hintText: "Contraseña:",
           ),
+          obscureText: true,
         ),
         ElevatedButton(
             // Los eventos desde UI, se lo envial al CUTBIT

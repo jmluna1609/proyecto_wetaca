@@ -23,14 +23,18 @@ class MyApp extends StatelessWidget {
           title: 'Wetaca',
           theme: ThemeData(
             // This is the theme of your application.
-            primarySwatch: Colors.purple,
+            primarySwatch: Colors.green,
           ),
+          // ruta inicial
           initialRoute: "/",
+          // rutas de la aplicación
           routes: {
-            "/": (context) => const LoginPage(),
-            "/home": (context) => const HomePage(),
-            "/newOrder": (context) => const OrderPage(),
-            "/register": (context) => const RegisterPage(),
+            "/": (context) => const LoginPage(), // ruta para el login
+            "/home": (context) => const HomePage(), // ruta para el home
+            "/newOrder": (context) =>
+                const OrderPage(), // ruta para tomar una orden
+            "/register": (context) =>
+                const RegisterPage(), // ruta para el registro
           },
         ));
   }
