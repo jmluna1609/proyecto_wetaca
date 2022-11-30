@@ -74,27 +74,31 @@ class _LoginPageState extends State<LoginPage> {
           ),
           obscureText: true,
         ),
+
+        // Botón de Login
         ElevatedButton(
             // Los eventos desde UI, se lo envial al CUTBIT
             onPressed: () {
               BlocProvider.of<LoginCubit>(context)
                   .login(_usernameController.text, _passwordController.text);
             },
-            child: const Text("Login")),
+            child: const Text("LOGIN")),
+        // Botón de Registro para un nuevo usuario
         ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/register');
             },
-            child: const Text("Create account"))
+            child: const Text("REGÍSTRATE")),
       ],
     );
   }
 
+// Muestra un Dialog
   Future<void> _showDialog(BuildContext context, String title, String message,
       bool closeable) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // user must tap button!
+      barrierDismissible: false, // usuario debe tocar el botón!
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
