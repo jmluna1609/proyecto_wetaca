@@ -12,19 +12,31 @@ class LoginCliente extends StatefulWidget {
 
 //creamos la clase _LoginClienteState
 class _LoginClienteState extends State<LoginCliente> {
-  final _usernametextcontroller =
-      TextEditingController(); //controlador de texto para el usuario
-  final _passwordtextcontroller = TextEditingController();
+  final _usernametextcontroller = TextEditingController(); //controlador de texto para el usuario
+  final _passwordtextcontroller = TextEditingController(); //controlador de texto para la contraseña
 
   @override
-  Widget build(BuildContext contexto1) {
+  //creamos el widget build para crear la interfaz de la aplicación
+  Widget build(BuildContext ctx1) {
     return BlocProvider(
       create: (context) => LoginClienteBloc(), //creamos el bloc
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Login Cliente'),
         ),
-        body: Center(
+        //creamos el body de la aplicación
+        body: BlocConsumer<LoginCubit,LoginState>(
+          //escucho los eventos que llegan del cubit
+          listener: (ctx3, state){
+            //Si el cubit dice cargando, se muestra un Dialog
+            if(state.status == PageStatus.success && state.loginSuccess) {
+              _showDialog(context, "Autenticación", "Verificando...",false);
+            } else if (state.status == PageStatus.success && state.loginSuccess){
+              // Si el cubit dice que la autenticación fue exitosa, se va a la pagina principal
+              Navigator.pop(ctx3);
+              Navigator.pushNamed(ctx3,'/home');
+            }
+          }
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
