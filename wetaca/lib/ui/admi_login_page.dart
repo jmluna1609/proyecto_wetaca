@@ -41,7 +41,8 @@ class _LoginPageState extends State<LoginPage> {
                 // Si el cubit dice que la autenticación fue correcta,
                 // se va a la pagian princial
                 Navigator.pop(ctx3); // quito el dialog
-                Navigator.pushNamed(ctx3, '/home');
+                Navigator.pushNamed(
+                    ctx3, '/rutaPagPrincipal'); // voy a la pagina principal
               } else {
                 // Si el cubit dice que hubo error se lo muestra.
                 Navigator.pop(ctx3); // quito el dialog
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
             child: const Text("Login")),
         ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/register');
+              Navigator.pushNamed(context, '/suscribirse');
             },
             child: const Text("Create account"))
       ],

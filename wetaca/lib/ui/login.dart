@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:async';
+
 import 'package:wetaca/cubit/login_cubit.dart';
 import 'package:wetaca/cubit/login_state.dart';
 import 'package:wetaca/cubit/page_status.dart';
@@ -81,14 +83,16 @@ class _LoginState extends State<Login> {
         ElevatedButton(
             // Los eventos desde UI, se lo envial al CUTBIT
             onPressed: () {
+              //TODO: tomar nota de esto
               BlocProvider.of<LoginCubit>(context)
                   .login(_usernameController.text, _passwordController.text);
+              // Navigator.pushNamed(context, '/rutaPagPrincipal');
             },
             child: const Text("LOGIN")),
         // Botón de Registro para un nuevo usuario
         ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/register');
+              Navigator.pushNamed(context, '/suscribirse');
             },
             child: const Text("REGÍSTRATE")),
         FlatButton(

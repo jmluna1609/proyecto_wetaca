@@ -3,13 +3,14 @@ import 'package:equatable/equatable.dart';
 import 'page_status.dart';
 
 class LoginState extends Equatable {
-  final PageStatus status;
-  final bool loginSuccess;
-  final String? errorMessage;
-  final Exception? exception;
-  final String? token;
-  final String? refreshToken;
+  final PageStatus status; // Estado de la página
+  final bool loginSuccess; // Indica si el login fue exitoso
+  final String? errorMessage; // Mensaje de error
+  final Exception? exception; // Excepción
+  final String? token; // Token de autenticación
+  final String? refreshToken; // Token de refresco
 
+// Constructor
   const LoginState({
     this.status = PageStatus.initial,
     this.loginSuccess = false,
@@ -19,13 +20,14 @@ class LoginState extends Equatable {
     this.refreshToken,
   });
 
+  // este metodo es para que Equatable pueda comparar los objetos
   LoginState copyWith({
-    PageStatus? status,
-    bool? loginSuccess,
-    String? errorMessage,
-    Exception? exception,
-    String? token,
-    String? refreshToken,
+    PageStatus? status, // Estado de la página
+    bool? loginSuccess, // Indica si el login fue exitoso
+    String? errorMessage, // Mensaje de error
+    Exception? exception, // Excepción
+    String? token, // Token de autenticación
+    String? refreshToken, // Token de refresco
   }) {
     return LoginState(
       status: status ?? this.status,
@@ -38,6 +40,7 @@ class LoginState extends Equatable {
   }
 
   @override
+  // este método es requerido por Equatable
   List<Object?> get props => [
         status,
         loginSuccess,

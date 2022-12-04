@@ -25,8 +25,9 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
           ),
           body: BlocBuilder<HomePageCubit, HomePageState>(
             builder: (context, state) {
-              if (state.status == PageStatus.loading) {
-                return Text("Cargando su información ....");
+              if (state.status == PageStatus.loading) //si el estado es cargando
+              {
+                return const Text("Cargando su información ....");
               } else if (state.status == PageStatus.failure) {
                 return Text("Ha ocurrido un error: ${state.errorMessage}");
               } else {
