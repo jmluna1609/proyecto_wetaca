@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:wetaca/cubit/login_cubit.dart';
 import 'package:wetaca/cubit/login_state.dart';
 import 'package:wetaca/cubit/page_status.dart';
@@ -89,6 +91,12 @@ class _LoginState extends State<Login> {
               Navigator.pushNamed(context, '/register');
             },
             child: const Text("REGÍSTRATE")),
+        FlatButton(
+            textColor: Colors.blue,
+            child: const Text("¿Olvidaste tu contraseña?"),
+            onPressed: () {
+              Navigator.pushNamed(context, '/olvidopass');
+            }),
       ],
     );
   }

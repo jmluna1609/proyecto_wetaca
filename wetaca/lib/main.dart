@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:wetaca/ui/agregar_cajero.dart';
+import 'package:wetaca/ui/olvido_password.dart';
 import 'package:wetaca/ui/pagina_principal.dart';
 import 'package:wetaca/ui/login.dart';
 import 'package:wetaca/ui/hacer_pedido.dart';
@@ -44,6 +45,8 @@ class MyApp extends StatelessWidget {
                 const AgregarCajero(), // ruta para añadir un cajero
             "/ubicacion": (context) =>
                 const Ubicacion(), // ruta para conocer la ubicación del cliente
+            "/olvidopass": (context) =>
+                const OlvidoPassword(), // ruta para recuperar la contraseña
           },
         ));
   }
