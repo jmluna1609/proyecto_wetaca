@@ -8,8 +8,11 @@ class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({Key? key}) : super(key: key);
 
   @override
-  State<PaginaPrincipal> createState() => _PaginaPrincipalState();
+  State<PaginaPrincipal> createState() =>
+      _PaginaPrincipalState(); // sirve para crear el estado de la pagina
 }
+
+//esta clase es la que se encarga de crear el estado de la pagina
 
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   @override

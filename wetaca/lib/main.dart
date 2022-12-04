@@ -1,7 +1,7 @@
-import 'package:wetaca/ui/home_page.dart';
-import 'package:wetaca/ui/login_page.dart';
-import 'package:wetaca/ui/order_page.dart';
-import 'package:wetaca/ui/register_page.dart';
+import 'package:wetaca/ui/pagina_principal.dart';
+import 'package:wetaca/ui/login.dart';
+import 'package:wetaca/ui/hacer_pedido.dart';
+import 'package:wetaca/ui/suscribirse.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,15 +14,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  // este widget es la raíz de la aplicación.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => AppCubit(),
         child: MaterialApp(
-          title: 'Wetaca',
+          title: 'Wetaca', // Titulo de la aplicación
           theme: ThemeData(
-            // This is the theme of your application.
+            // Esta es la paleta de colores de la aplicación
             primarySwatch: Colors.green,
           ),
           // ruta inicial
@@ -36,6 +36,8 @@ class MyApp extends StatelessWidget {
                 const HacerPedido(), // ruta para hacer un pedido
             "/suscribirse": (context) =>
                 const Suscribirse(), // ruta para registrarse
+            "/agregarCajero": (context) =>
+                const AgregarCajero(), // ruta para añadir un cajero
           },
         ));
   }
