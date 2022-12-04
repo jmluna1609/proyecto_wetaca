@@ -1,9 +1,13 @@
+import 'dart:ffi';
+
+import 'package:wetaca/ui/agregar_cajero.dart';
 import 'package:wetaca/ui/pagina_principal.dart';
 import 'package:wetaca/ui/login.dart';
 import 'package:wetaca/ui/hacer_pedido.dart';
 import 'package:wetaca/ui/suscribirse.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wetaca/ui/ubicacion.dart';
 
 import 'cubit/app_cubit.dart';
 
@@ -38,6 +42,8 @@ class MyApp extends StatelessWidget {
                 const Suscribirse(), // ruta para registrarse
             "/agregarCajero": (context) =>
                 const AgregarCajero(), // ruta para añadir un cajero
+            "/ubicacion": (context) =>
+                const Ubicacion(), // ruta para conocer la ubicación del cliente
           },
         ));
   }

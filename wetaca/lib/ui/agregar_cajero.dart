@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //esta clase es la que se encarga de crear el estado de la pagina
