@@ -2,7 +2,7 @@ import 'package:wetaca/cubit/page_status.dart';
 import 'package:wetaca/dto/login_response_dto.dart';
 import 'package:wetaca/service/login_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart'; // Para guardar el token
 
 import 'login_state.dart';
 
