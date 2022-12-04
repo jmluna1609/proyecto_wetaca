@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 
 //esta laparte donde se suscribe el cliente nuevo
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class Suscribirse extends StatefulWidget {
+  const Suscribirse({Key? key}) : super(key: key);
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _SuscribirseState createState() => _SuscribirseState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _SuscribirseState extends State<Suscribirse> {
   final _fullNameController = TextEditingController(); //nombre
   final _fullLastNameController = TextEditingController(); //apellido
   final _fullEmailController = TextEditingController(); //email

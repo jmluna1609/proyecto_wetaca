@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit_admi/login_admi_cubit.dart';
-import '../cubit_admi/login_admi_state.dart';
-import '../cubit_admi/page_status.dart';
+import '../cubit/login_cubit.dart';
+import '../cubit/login_state.dart';
+import '../cubit/page_status.dart';
+import '../cubit/login_cubit.dart';
+import '../cubit/login_state.dart';
+import '../cubit/page_status.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

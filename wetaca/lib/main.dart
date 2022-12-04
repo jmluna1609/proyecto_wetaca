@@ -29,12 +29,13 @@ class MyApp extends StatelessWidget {
           initialRoute: "/",
           // rutas de la aplicación
           routes: {
-            "/": (context) => const LoginPage(), // ruta para el login
-            "/home": (context) => const HomePage(), // ruta para el home
-            "/newOrder": (context) =>
-                const OrderPage(), // ruta para tomar una orden
-            "/register": (context) =>
-                const RegisterPage(), // ruta para el registro
+            "/": (context) => const Login(), // ruta para el login
+            "/rutaPagPrincipal": (context) =>
+                const PaginaPrincipal(), // ruta para la pagina principal
+            "/hacerPedido": (context) =>
+                const HacerPedido(), // ruta para hacer un pedido
+            "/suscribirse": (context) =>
+                const Suscribirse(), // ruta para registrarse
           },
         ));
   }

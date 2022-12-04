@@ -4,14 +4,14 @@ import 'package:wetaca/cubit/page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class PaginaPrincipal extends StatefulWidget {
+  const PaginaPrincipal({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<PaginaPrincipal> createState() => _PaginaPrincipalState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PaginaPrincipalState extends State<PaginaPrincipal> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
