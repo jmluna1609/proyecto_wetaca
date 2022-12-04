@@ -1,4 +1,4 @@
-import 'package:wetaca/cubit/home_page_state.dart';
+import 'package:wetaca/cubit/pagina_principal_state.dart';
 import 'package:wetaca/cubit/page_status.dart';
 import 'package:wetaca/dto/user_info_dto.dart';
 import 'package:wetaca/service/user_service.dart';

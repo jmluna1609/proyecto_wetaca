@@ -1,5 +1,5 @@
-import 'package:wetaca/cubit/home_page_cubit.dart';
-import 'package:wetaca/cubit/home_page_state.dart';
+import 'package:wetaca/cubit/pagia_principal_cubit.dart';
+import 'package:wetaca/cubit/pagina_principal_state.dart';
 import 'package:wetaca/cubit/page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
