@@ -87,16 +87,9 @@ class _LoginState extends State<Login> {
                 // Los eventos desde UI, se lo envial al CUTBIT
                 onPressed: () {
                   // If de prueba para ingresar a la app
-                  if (_usernameController.text == "juan" &&
-                      _passwordController.text == "1234") {
-                    Navigator.pushNamed(context, '/home');
-                  }
-                  print("_usernameController.text: " +
-                      _usernameController.text +
-                      " _passwordController.text: " +
-                      _passwordController.text);
-                  //BlocProvider.of<LoginCubit>(context).login(
-                  //    _usernameController.text, _passwordController.text);
+
+                  BlocProvider.of<LoginCubit>(context).login(
+                      _usernameController.text, _passwordController.text);
                 },
                 child: const Text("LOGIN")),
 
