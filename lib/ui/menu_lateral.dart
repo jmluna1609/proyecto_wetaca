@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wetaca/ui/profile_page.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({Key? key}) : super(key: key);
@@ -19,10 +20,6 @@ class MenuLateral extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, "/home");
-                /*
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => notaPage()));
-                    */
               },
             ),
             ListTile(
@@ -33,10 +30,6 @@ class MenuLateral extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, "/register");
-                /*
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => notaPage()));
-                    */
               },
             ),
             ListTile(
@@ -47,8 +40,6 @@ class MenuLateral extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, "/home");
-                /*Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Listado()));*/
               },
             ),
             ListTile(
@@ -58,21 +49,17 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushNamed(context, "/home");
-                /*Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Listado()));*/
+                Navigator.pushNamed(context, "/comoFunciona");
               },
             ),
             ListTile(
               title: Text(
-                'LOGIN ADMIN',
+                'CREAR PLATOS',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushNamed(context, "/home");
-                /*Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Listado()));*/
+                Navigator.pushNamed(context, "/registerPlato");
               },
             ),
             ListTile(
@@ -81,8 +68,8 @@ class MenuLateral extends StatelessWidget {
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               onTap: () {
-                /*Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Listado()));*/
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/profile");
               },
             ),
           ],

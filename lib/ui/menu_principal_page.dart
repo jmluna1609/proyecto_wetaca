@@ -36,12 +36,15 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             SizedBox(
               height: 15,
             ),
-            Text(
-              'SUSCRIBETE GRATIS',
-              style: TextStyle(fontSize: 22, color: Colors.black),
+            Center(
+              child: const Text("SUSCRIBETE GRATIS",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 103, 103, 103),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold)),
             ),
             // Agregamos SizedBox para separar los elementos
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             // Centramos un imagen de la carpeta assets
             Container(
               width: 300,
@@ -59,7 +62,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             Text(
               'No te preocupes por preparar tu comida, \n   WETACA lo prepara por ti. ',
               style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 18,
                   color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
@@ -68,7 +71,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
             Text(
               'SUSCRIBETE Y HAZ TU PEDIDO',
-              style: TextStyle(fontSize: 18, color: Colors.black),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
 
             // Agregamos SizedBox para separar los elementos
@@ -81,7 +84,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             // y agregar en el pubspec.yaml
             // url_launcher: ^6.0.9
             // y luego ejecutar flutter pub get
-            Expanded(
+            Container(
+              height: 100,
+              width: 400,
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(

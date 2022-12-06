@@ -54,68 +54,80 @@ class _LoginState extends State<Login> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Align(
-          alignment: const Alignment(0.00, -0.60),
-          child: Image.network(
-            "https://images.prismic.io/rakuten-europe/d7b25e51-f442-4e38-bc28-44e89576bffb_wetaca.png?auto=compress,format",
-            height: 100,
-            width: 200,
-            fit: BoxFit.cover,
-          ),
-        ),
-        TextField(
-          controller: _usernameController,
-          decoration: const InputDecoration(
-            hintText: "Usuario:",
-          ),
-        ),
-        TextField(
-          controller: _passwordController,
-          decoration: const InputDecoration(
-            hintText: "Contraseña:",
-          ),
-          obscureText: true,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              height: 15,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(children: [
+            Align(
+              alignment: const Alignment(0.00, -0.60),
+              child: Image.network(
+                "https://images.prismic.io/rakuten-europe/d7b25e51-f442-4e38-bc28-44e89576bffb_wetaca.png?auto=compress,format",
+                height: 100,
+                width: 200,
+                fit: BoxFit.cover,
+              ),
             ),
-            // Botón de Login
-            ElevatedButton(
-                // Los eventos desde UI, se lo envial al CUTBIT
-                onPressed: () {
-                  // If de prueba para ingresar a la app
-
-                  BlocProvider.of<LoginCubit>(context).login(
-                      _usernameController.text, _passwordController.text);
-                },
-                child: const Text("LOGIN")),
-
             SizedBox(
-              height: 10,
+              child: TextField(
+                controller: _usernameController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese su nombre de usuario"),
+              ),
+              height: 50,
             ),
-
-            // Botón de Registro para un nuevo usuario
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, '/register');
-                },
-                child: const Text("REGÍSTRATE")),
-
+            SizedBox(height: 10),
             SizedBox(
-              height: 10,
+              child: TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese su contraseña"),
+              ),
+              height: 50,
             ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 15,
+                ),
+                // Botón de Login
+                ElevatedButton(
+                    // Los eventos desde UI, se lo envial al CUTBIT
+                    onPressed: () {
+                      // If de prueba para ingresar a la app
 
-            ElevatedButton(
-                child: const Text("¿Olvidaste tu contraseña?"),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/olvidopass');
-                }),
-          ],
-        )
+                      BlocProvider.of<LoginCubit>(context).login(
+                          _usernameController.text, _passwordController.text);
+                    },
+                    child: const Text("LOGIN")),
+
+                SizedBox(
+                  height: 10,
+                ),
+
+                // Botón de Registro para un nuevo usuario
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: const Text("REGÍSTRATE")),
+
+                SizedBox(
+                  height: 10,
+                ),
+
+                ElevatedButton(
+                    child: const Text("¿Olvidaste tu contraseña?"),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/olvidopass');
+                    }),
+              ],
+            )
+          ]),
+        ),
       ],
     );
   }

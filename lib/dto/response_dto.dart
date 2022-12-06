@@ -1,15 +1,16 @@
+///Clase para establecer la estructura de las respuestas del servidor Backend
 class ResponseDto<T> {
-  final bool success;
-  final String? message;
   final T? data;
+  final String? message;
+  final bool success;
 
-  ResponseDto({this.success = false, this.message, this.data});
+  ResponseDto({this.data, this.message = '', this.success = false});
 
   factory ResponseDto.fromJson(Map<String, dynamic> json) {
     return ResponseDto(
-      success: json['success'],
-      message: json['message'],
       data: json['data'],
+      message: json['message'],
+      success: json['success'],
     );
   }
 }

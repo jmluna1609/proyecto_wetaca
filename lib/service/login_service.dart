@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class LoginService {
   // Cómo es posible que la URL cambie de acuerdo a la red WIFI, entonces es
   // recomendable tenerlo en una variable
-  static const String backendUrlBase = "http://192.168.0.6:7777";
+  static const String backendUrlBase = "http://192.168.0.2:7777";
 
   // Enviamos al backend username y password para su validación.
   static Future<LoginResponseDto> login(
@@ -18,7 +18,7 @@ class LoginService {
     // Construimos la URI para formatear espacios, tildes, etc.
     // username => "JUAN PEREZ" ~URL ENCODING~> "JUAN%20PEREZ"
     // var uri = Uri.parse('http://192.168.0.7:7777/api/v1/auth/' + username);
-    var uri = Uri.parse("$backendUrlBase/api/v1/autorizacion/");
+    var uri = Uri.parse("$backendUrlBase/api/v1/autorizacion");
     // Construimos el cuerpo de la solicitud REST de acuerdo a la especificaicón
     // Que Banckend nos entrego.
     var body = jsonEncode({
